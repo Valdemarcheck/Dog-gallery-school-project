@@ -19,13 +19,10 @@ h1 {
   font-weight: 600;
 }
 
-p {
-  font-size: 1.4rem;
-}
-
+p,
 select,
 #query-image {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 header {
@@ -34,17 +31,23 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  padding: 20px 0;
+  gap: 20px;
+  padding: 40px 0;
   background-color: rgb(230, 230, 230);
+}
+
+select {
+  padding: 5px 15px;
 }
 
 img {
   width: 100%;
 }
 
-select {
-  padding: 5px 15px;
+img:hover {
+  -webkit-animation: slide-top 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both
+    alternate;
+  animation: slide-top 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both alternate;
 }
 
 #slideshow {
@@ -56,8 +59,8 @@ select {
 }
 
 #query-image {
-  padding: 5px 20px;
-  border-radius: 10px;
+  padding: 10px 30px;
+  border-radius: 20px;
   border: none;
   background-color: rgb(111, 156, 240);
   color: rgb(240, 240, 240);
@@ -68,12 +71,6 @@ select {
 }
 
 /* ANIMATIONS */
-
-.tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
 
 @-webkit-keyframes tracking-in-contract {
   0% {
@@ -88,6 +85,7 @@ select {
     opacity: 1;
   }
 }
+
 @keyframes tracking-in-contract {
   0% {
     letter-spacing: 1em;
@@ -99,5 +97,27 @@ select {
   100% {
     letter-spacing: normal;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-top {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes slide-top {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
   }
 }
