@@ -27,7 +27,7 @@ function createSlideshow(images, breed) {
 
   for (let i = 0; i < images.length; i++) {
     if (i >= 50) break;
-    slideshow.innerHTML += `<div class="card"><img src="${images[i]}" alt="A ${breed}"/></div>`;
+    slideshow.innerHTML += `<div><img src="${images[i]}" alt="A ${breed}"/></div>`;
   }
 }
 
