@@ -20,11 +20,15 @@ async function getBreeds() {
 }
 
 function createSlideshow(images, breed) {
-  document.getElementById("slideshow").innerHTML = `
-      ${images.map((image) => {
-        return `<div class="card"><img src="${image}" alt="A ${breed}"></div>`;
-      })}
-      `;
+  const slideshow = document.getElementById("slideshow");
+  slideshow.innerHTML = "";
+
+  console.log(images);
+
+  for (let i = 0; i < images.length; i++) {
+    if (i >= 50) break;
+    slideshow.innerHTML += `<div class="card"><img src="${images[i]}" alt="A ${breed}"/></div>`;
+  }
 }
 
 async function getRandomImage() {
